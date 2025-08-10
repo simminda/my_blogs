@@ -1,0 +1,60 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+}
+
+.blog-list {
+  border-right: 1px solid var(--bs-border-color);
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.blog-list-item {
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.blog-list-item:hover {
+  background-color: var(--bs-secondary-bg);
+}
+
+.blog-list-item.active {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+nav {
+  border-bottom: 1px solid var(--bs-border-color);
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+}
+
+nav img {
+  height: 72px;
+}
+
+.tag-pill {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  margin: 0.15rem;
+  font-size: 0.75rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 50rem;
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  cursor: default;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tag-pill:hover {
+  background-color: var(--bs-primary);
+  color: #fff;
+}

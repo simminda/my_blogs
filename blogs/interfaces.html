@@ -1,0 +1,170 @@
+<h2>Java Interfaces</h2>
+<small>October 27, 2021</small>
+
+<p class="MsoNormal"><span>
+                <o:p><br /></o:p>
+        </span></p>
+
+<p><b><span>What is an interface in Java and why would you, as a software developer, use interfaces?</span></b></p>
+
+<p class="MsoNormal"><span>An interface is
+                like a blueprint of a class. It specifies a set of methods that the class has
+                to implement. An interface can have variables and methods, just like a class,
+                but the methods declared in an interface are by default abstract. <o:p></o:p></span></p>
+
+<ul style="margin-top: 0cm;" type="disc">
+        <li> <span>Interfaces are used to:<o:p></o:p></span></li>
+
+        <li> <span>Implement abstraction. Used to achieve total abstraction.<o:p></o:p></span></li>
+
+        <li> <span>Achieve loose coupling <o:p></o:p></span></li>
+
+        <li> <span>Achieve multiple inheritance (Java Classes do not support multiple inheritance)<o:p></o:p></span>
+        </li>
+</ul>
+
+<p class="MsoNormal"><span>
+                <o:p>&nbsp;</o:p>
+        </span></p>
+
+<p class="MsoNormal"><b><span>What is the difference between an abstract class and an interface?</span></b></p>
+
+<p class="MsoNormal"><span>Abstraction is hiding the internal implementation of a feature and only showing its
+                functionality to users. Abstract class and Interface are both used for
+                abstraction. Interfaces are used to achieve full abstraction whereas abstract
+                classes achieve partial abstraction.<o:p></o:p></span></p>
+
+<ul style="margin-top: 0cm;" type="disc">
+        <li class="MsoListParagraph"><span>Interfaces
+                        can have only abstract methods. Interface variables can only be static and
+                        final. Interface members are public by default. <o:p></o:p></span></li>
+        <li class="MsoListParagraph"><span>An
+                        abstract class can have abstract and non-abstract methods. Abstract class
+                        variables can be declared as non-final. Abstract classes can have final,
+                        non-final, static and non-static variables.<o:p></o:p></span></li>
+        <li class="MsoListParagraph"><span>An interface can extend
+                        another interface only. An abstract class can extend another class and implement multiple
+                        interfaces. <o:p></o:p></span></li>
+</ul>
+
+<p class="MsoNormal"><span>
+                <o:p>&nbsp;</o:p>
+        </span></p>
+
+<p class="MsoNormal"><b><span>Why is
+                        abstraction an important concept in software development and what role do
+                        interfaces play in abstraction?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>Abstraction is
+                one of the key concepts of object-oriented programming (OOP) languages. Its
+                main goal is to handle complexity by hiding unnecessary details from the user.
+                That enables the user to implement more complex logic on top of the provided
+                abstraction without understanding or even thinking about all the hidden
+                complexity (Jansen T , 2017). The appliances we use in our everyday lives all serve
+                as an example of abstraction because we use them without knowing, or having to
+                know, their internal workings and all the calculations and parameters they have
+                to check in the background. Interfaces are used to achieve total abstraction. The
+                methods declared in an interface are by default abstract and interfaces
+                simulate multiple inheritance so they are very convenient when it comes to abstraction<o:p></o:p></span>
+</p>
+
+<p class="MsoNormal"><b><span>
+                        <o:p>&nbsp;</o:p>
+                </span></b></p>
+
+<p class="MsoNormal"><b><span>What must a
+                        class do in order to implement an interface?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>To declare a
+                class that implements an interface, the class must provide all of the methods
+                in the interface and identify the interface in its implements clause.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span>
+                        <o:p>&nbsp;</o:p>
+                </span></b></p>
+
+<p class="MsoNormal"><b><span>What is an
+                        abstract method?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>As per docs.oracle.com:</span></p>
+
+<p class="MsoNormal"><span>An abstract
+                method is a method that is declared without an implementation (without braces,
+                and followed by a semicolon), like this:</span></p>
+
+<p class="MsoNormal" style="text-indent: 36.0pt;"><span>abstract
+                void moveTo(double deltaX, double deltaY);</span></p>
+
+<p class="MsoNormal"><span>If a class
+                includes abstract methods, then the class itself must be declared abstract, as
+                in:</span></p>
+
+<p class="MsoNormal"><span>public abstract
+                class GraphicObject {<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span><span style="mso-spacerun: yes;">&nbsp;&nbsp; </span><span
+                        style="mso-tab-count: 1;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//
+                declare fields<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span><span style="mso-spacerun: yes;">&nbsp;&nbsp; </span><span
+                        style="mso-tab-count: 1;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>//
+                declare nonabstract methods<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span><span style="mso-spacerun: yes;">&nbsp;&nbsp; </span><span
+                        style="mso-tab-count: 1;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>abstract
+                void draw();<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>}<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span>
+                        <o:p>&nbsp;</o:p>
+                </span></b></p>
+
+<p class="MsoNormal"><b><span>Can you
+                        instantiate an interface?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>Interfaces cannot
+                be instantiated. They are implemented. <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>Interfaces have
+                no method implemented; therefore, there is no purpose in instantiating it as nothing
+                would happen when a method is invoked<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span>
+                        <o:p>&nbsp;</o:p>
+                </span></b></p>
+
+<p class="MsoNormal"><b><span>Can you
+                        declare a constructor inside an interface? If not, why?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>The purpose of
+                a constructor is to initialize the non-static members of a particular class
+                with respect to an object. An interface cannot have a constructor because all
+                the data members in interfaces are public static final by default.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span>
+                        <o:p>&nbsp;</o:p>
+                </span></b></p>
+
+<p class="MsoNormal"><b><span>Can we
+                        override an interface method with visibility that is not public?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>We cannot
+                override an interface method if its visibility is not public. If it has its
+                visibility as public then you can override it with the same method signature
+                (i.e. with the same access specifier public) whenever you implement the
+                interface to any class.<o:p></o:p></span></p>
+
+
+<p class="MsoNormal"><span>
+                <o:p>&nbsp;</o:p>
+        </span></p>
+
+<p class="MsoNormal"><span>
+                <o:p>&nbsp;</o:p>
+        </span></p>
+
+<p class="MsoNormal"><b><span><u>References</u></span></b></p>
+
+<p class="MsoNormal"><span>Thorben Janssen_November
+                23, 2017_DEVELOPER Tips, Tricks &amp; Resources<o:p></o:p></span></p>

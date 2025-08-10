@@ -1,0 +1,418 @@
+<h2>Concurrency - Some common interview questions</h2>
+<small>October 25, 2021</small>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+
+<p><b><span><br /></span></b></p>
+<p><b><span>What is the difference
+            between process and thread?</span></b></p>
+
+<p class="MsoNormal"><span>A process is a program that
+        has been loaded into memory along with all the resources it needs in order to
+        run. A thread is the unit of execution within a process. A process can have
+        multiple threads and these multiple threads are contained within a process, but
+        a thread cannot contain a process.&nbsp;</span></p>
+<p class="MsoNormal"><span>Key differences include:</span></p>
+
+<p> - Processes take more time to create, context switch, and terminate.<o:p></o:p></span></p>
+
+<p> - Threads are more efficient in terms of communication and consume fewer resources.<o:p></o:p></span></p>
+
+<p> - Threads are also called lightweight processes and processes are called heavy-weight processes<o:p></o:p></span>
+</p>
+
+<p> - Processes are isolated whereas threads share memory<o:p></o:p></span></p>
+
+<p> - Process switches use the interface of the operating system (OS). Thread switching does not need to&nbsp; &nbsp;
+    call the OS<o:p></o:p></span></p>
+
+<p> - A process that is blocked will not affect the execution of other processes. A thread that is blocked will prevent
+    a second thread in the same task from running</span></p>
+
+<p class="MsoNormal"><b><span><br /></span></b></p>
+<p class="MsoNormal"><b><span>How do you create a thread in Java and run it?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>A thread can be created by either extending a thread class or by implementing Runnable
+        interface.<o:p></o:p></span></p>
+
+<p>
+    <!--[if !supportLists]--><span><span style="mso-list: Ignore;">-<span
+                style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><!--[endif]--><span>To implement
+        Runnable interface, a class need only implement a single method called run( ) –
+        ‘public void run( )’<o:p></o:p></span>
+</p>
+
+<p>
+    <!--[if !supportLists]--><span><span style="mso-list: Ignore;">-<span
+                style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><!--[endif]--><span>Inside run( ),
+        define the code that constitutes the new thread<o:p></o:p></span>
+</p>
+
+<p>
+    <!--[if !supportLists]--><span><span style="mso-list: Ignore;">-<span
+                style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><!--[endif]--><span>Pass an
+        instance of the class to a thread in its constructor.<o:p></o:p></span>
+</p>
+
+<p class="MsoListParagraphCxSpLast" >
+    <!--[if !supportLists]--><span><span style="mso-list: Ignore;">-<span
+                style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><!--[endif]--><span>Start( ) the
+        thread and will call the run ( ) method of the class instance instead of
+        executing its own run( ) method.</span>
+</p>
+<p class="MsoListParagraphCxSpLast" ><a
+        href="https://blogger.googleusercontent.com/img/a/AVvXsEgs7gusmHIlKRRG7L2Px5iHSOrOiVnBqhi03GP9pyoq0cbPa1dgAP3L-aZvsAEOKsEMRbefZP5FHdtIOsrECvchxwWdgq5dPVqqRki8FqxgDz0Z2PTiwCCeY32PLmbwqshX9FcDGJe-BVLGOEPmAsOiIGe5hNokwo5GHR5VlGXMdyyrX4yivFiO_nZHcQ=s917"
+        style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: center;"><img border="0"
+            data-original-height="131" data-original-width="917" height="89"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgs7gusmHIlKRRG7L2Px5iHSOrOiVnBqhi03GP9pyoq0cbPa1dgAP3L-aZvsAEOKsEMRbefZP5FHdtIOsrECvchxwWdgq5dPVqqRki8FqxgDz0Z2PTiwCCeY32PLmbwqshX9FcDGJe-BVLGOEPmAsOiIGe5hNokwo5GHR5VlGXMdyyrX4yivFiO_nZHcQ=w621-h89"
+            width="621" /></a><a
+        href="https://blogger.googleusercontent.com/img/a/AVvXsEi0Q0BmoWu2kmgU6TzTUIxCnQA1LvjMTk4ZqYLRRSoQkjWMFk360gszD-SSwVelhlzWOb4Q8rXkcttO66senvE8J1TP0YKeOHmdhsHPEtZHXJxwc79APr3v88vcDVZxwpmEP9o4apKwxBwSAHTYY62DQq1RDeNqd2axTU4zCj3q5Doko07FpfHqc_x9Ag=s915"
+        style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: center;"><img border="0"
+            data-original-height="73" data-original-width="915" height="52"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEi0Q0BmoWu2kmgU6TzTUIxCnQA1LvjMTk4ZqYLRRSoQkjWMFk360gszD-SSwVelhlzWOb4Q8rXkcttO66senvE8J1TP0YKeOHmdhsHPEtZHXJxwc79APr3v88vcDVZxwpmEP9o4apKwxBwSAHTYY62DQq1RDeNqd2axTU4zCj3q5Doko07FpfHqc_x9Ag=w604-h52"
+            width="604" /></a></p>
+<p class="MsoNormal" style="margin-left: 18pt;"><br /><span>
+        <o:p></o:p>
+    </span></p>
+
+<p class="MsoNormal" style="margin-left: 18pt;"><span
+        style="font-family: Oxygen; mso-no-proof: yes;"><br /><!--[endif]--></span><br /><span>
+        <o:p></o:p>
+    </span></p>
+
+<p><span><span style="mso-list: Ignore;"><br /></span></span></p>
+<p><span><span style="mso-list: Ignore;"><br /></span></span></p>
+<p><span><span style="mso-list: Ignore;"><br /></span></span></p>
+<p><!--[if !supportLists]--><span><span style="mso-list: Ignore;">-<span
+                style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></span><span>Alternatively
+        a
+        thread can be created by creating a new class that extends Thread, then
+        override then override the run ( ) method and then to create an instance of
+        that class. <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-family: Oxygen; mso-no-proof: yes;"><br /><!--[endif]--></span></p>
+<div class="separator" style="clear: both; text-align: center;"><a
+        href="https://blogger.googleusercontent.com/img/a/AVvXsEg9SNkpCNnuE-IO_Kx8EgN9Rg-T8SMGiKdxY2M35ZRrh2rjvRpe_9jMISCMsHhoSV3a-uf_Z9l7SCC8ok5VJRJT6ETp9jtksyJIbpINCzYOQP5pT_H14mYQS71s6Wuv7eZ6WFq8pzWsJmJQ3GjnGgoV4-7n8p3W3N0-_yYuyxMXTpwPfqemeDn8eanGaA=s914"
+        style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"
+            data-original-height="246" data-original-width="914" height="174"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEg9SNkpCNnuE-IO_Kx8EgN9Rg-T8SMGiKdxY2M35ZRrh2rjvRpe_9jMISCMsHhoSV3a-uf_Z9l7SCC8ok5VJRJT6ETp9jtksyJIbpINCzYOQP5pT_H14mYQS71s6Wuv7eZ6WFq8pzWsJmJQ3GjnGgoV4-7n8p3W3N0-_yYuyxMXTpwPfqemeDn8eanGaA=w604-h174"
+            width="604" /></a></div><br /><span>
+    <o:p></o:p>
+</span>
+<p></p>
+
+<p class="MsoNormal"><span>
+        <o:p>&nbsp;</o:p>
+    </span></p>
+
+<p class="MsoNormal"><b><span><br /></span></b></p>
+<p class="MsoNormal"><b><span><br /></span></b></p>
+<p class="MsoNormal"><b><span><br /></span></b></p>
+<p class="MsoNormal"><b><span><br /></span></b></p>
+<p class="MsoNormal"><b><span>What are the different
+            states of a thread and when do the state transitions occur?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>A thread can have three
+        states. Running, ready and blocked<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>Ready (new): When a thread
+        is created it is in a new state. Its code is yet to run and has not started to
+        execute<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>Running: When a threads
+        code is running. Threads that are in a runnable state (waiting for the CPU)
+        also fall under this category<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>Blocked: When a thread
+        tries to execute a protected section of code that is currently locked by some
+        other thread. The thread becomes temporarily inactive and lies in waiting until
+        a particular condition is met which will tell the scheduler to move it to a
+        runnable state.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>
+        <o:p>&nbsp;</o:p>
+    </span></p>
+
+<p class="MsoNormal"><b><span>What is a daemon thread
+            and what are its use cases?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>A daemon thread is a low
+        priority thread that runs in the background to perform tasks such as stats
+        collection, system monitoring tasks, listening for incoming connections and
+        performing asynchronous I/O tasks . It is actually an utmost low priority
+        thread. The Java Virtual Machine terminates once all user threads finish their
+        execution whether or a not a daemon thread is running.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>
+        <o:p>&nbsp;</o:p>
+    </span></p>
+
+<p class="MsoNormal"><b><span>How do you create a
+            daemon thread?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>Creating a thread as a
+        daemon in Java is as simple as calling the setDaemon( ) method. A setting of
+        true means the thread is a daemon; false means it is not. By default, all
+        threads are created with an initial value of false.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span>
+            <o:p>&nbsp;</o:p>
+        </span></b></p>
+
+<div class="separator" style="clear: both; text-align: center;"><a
+        href="https://blogger.googleusercontent.com/img/a/AVvXsEgDfKyHIjr4Y53t7xOmoq6OYQjD9kQ4saHrXL3jr31dzf5Q-lfzP0oaGttEyQfUX6d6IZRfRfiI2ew2a0MjI5wVu8m0z6wxfyxjg92vpLFRdfgGSrchfPQsq8SAI7tOynzaAppGNu2Z_mhr_WtsyDr_b11O48GdVhc5JDMc0z_qY4RhfnLdp7GEtMK_YQ=s903"
+        style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"
+            data-original-height="643" data-original-width="903" height="465"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgDfKyHIjr4Y53t7xOmoq6OYQjD9kQ4saHrXL3jr31dzf5Q-lfzP0oaGttEyQfUX6d6IZRfRfiI2ew2a0MjI5wVu8m0z6wxfyxjg92vpLFRdfgGSrchfPQsq8SAI7tOynzaAppGNu2Z_mhr_WtsyDr_b11O48GdVhc5JDMc0z_qY4RhfnLdp7GEtMK_YQ=w653-h465"
+            width="653" /></a></div><br />
+<p class="MsoNormal"><br /></p>
+
+<p class="MsoNormal"><span>
+        <o:p>&nbsp;</o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+
+<p class="MsoNormal"><b><span>What is Java Memory
+            Model (JMM)?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>The Java memory model
+        specifies how the Java virtual machine works with the computer's memory (RAM).
+        The Java virtual machine is a model of a whole computer so this model naturally
+        includes a memory model - AKA the Java memory model (Jakob Jenkov, 07-2020).
+        The JMM specifies how and when different threads can see values written to
+        shared variables by other threads and how to synchronize access to shared
+        variables when necessary.<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>
+        <o:p>&nbsp;</o:p>
+    </span></p>
+
+<p class="MsoNormal"><b><span>What are deadlock,
+            livelock, and starvation? What causes these conditions?<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b><span>
+            <o:p></o:p>
+        </span></b></p>
+
+<p><!--[if !supportLists]--><span><span style="mso-list: Ignore;">-<span
+                style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><!--[endif]--><span>A deadlock is a
+        situation in which processes block each other due to resource acquisition and
+        none of the processes makes any progress as they wait for the resource held by
+        the other process. Baeldung (2021) specifies four conditions which must hold simultaneously
+        for a scenario to be classified as a deadlock:&nbsp;</span></p>
+<p></p>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;<a
+        href="https://blogger.googleusercontent.com/img/a/AVvXsEiPNRLG-0gMw5kesNV6B164AQ-xB8gripVq0rljctAbTbtF9J5S5qpbjubg_itBUY2dDLjXVbEJUzjkqE0RvagfkMRx02cGAvxB0GVQiCOgKgjXe4eIK8djqFVB1A3_nqpsYfMePRBM9In2Yrb1uyfJneMM1MokAFtZz8Fk21jBR07cuqYZ4ew1BNK26Q=s873"
+        style="clear: left; display: inline; margin-bottom: 1em; margin-right: 1em; text-align: center;"><img border="0"
+            data-original-height="201" data-original-width="873" height="142"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiPNRLG-0gMw5kesNV6B164AQ-xB8gripVq0rljctAbTbtF9J5S5qpbjubg_itBUY2dDLjXVbEJUzjkqE0RvagfkMRx02cGAvxB0GVQiCOgKgjXe4eIK8djqFVB1A3_nqpsYfMePRBM9In2Yrb1uyfJneMM1MokAFtZz8Fk21jBR07cuqYZ4ew1BNK26Q=w616-h142"
+            width="616" /></a></p>
+<p>T<span>o
+        prevent the occurrence of deadlock, at least one of the necessary conditions above
+        should not hold true</span></p>
+<p></p>
+
+<p>
+    <!--[if !supportLists]--><span><span style="mso-list: Ignore;">-<span
+                style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><!--[endif]--><span>A live lock is
+        similar to a deadlock but in a livelock scenario, processes block each other
+        and wait indefinitely while continuously changing their resource state. The
+        processes depend on each other therefore none of them can ever finish their
+        tasks. A livelock can happen when two processes need the same resource. Each
+        process checks whether the other process is in an active state before it can
+        hand over the resource. If both the processes are in inactive status they will
+        keep handing the resource to each indefinitely.<o:p></o:p></span>
+</p>
+
+<p class="MsoListParagraphCxSpLast" >
+    <!--[if !supportLists]--><span><span style="mso-list: Ignore;">-<span
+                style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><!--[endif]--><span>Starvation, as
+        the name implies, is when a process is unable to gain regular access to the
+        shared resources that is needs to complete a task, and is thus unable to make
+        any progress. Starvation can occur due to deadlock. Livelock or another
+        process. A process can repeatedly gain access to a shared resource or use it for
+        an extended period of time while other processes are waiting for the same
+        resource. The waiting processes are effectively starved for the resource. <o:p></o:p></span>
+</p>
+
+<p class="MsoNormal"><span>
+        <o:p>&nbsp;</o:p>
+    </span></p>
+
+<p class="MsoNormal"><b><span>What happens if we don’t
+            override the thread class run() method <o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span>When we call the start()
+        method on thread, it internally calls the run() method with the newly created
+        thread. So, if we don’t override the thread class run() method, the newly
+        created thread will not be called and nothing will happen. We will not get any
+        output because the Thread class run( ) method is defined with an empty
+        implementation. <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span>This is visualized in the
+        snippet below from JavaMadeSoEasy.com:<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-family: Oxygen; mso-no-proof: yes;"><br /><!--[endif]--></span></p>
+<div class="separator" style="clear: both; text-align: center;"><a
+        href="https://blogger.googleusercontent.com/img/a/AVvXsEi77ZjehI8ADfO4xf5rp9kgHar502V3NdVQ5T5N4nPI4vEkpJnyqCwpoJ_goOzTldeA5a_xlwYudNRrtflIj-mEKagE-ikpZ4WGjIGYYxHdphEOPFxfzEZR-m-NNQVCllAD3Hse78A2NgonoaJp9KoKbs2d9cGb6eiiTSXPPO6EPQSkROcUOBRYRMzeKw=s627"
+        style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0"
+            data-original-height="418" data-original-width="627" height="433"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEi77ZjehI8ADfO4xf5rp9kgHar502V3NdVQ5T5N4nPI4vEkpJnyqCwpoJ_goOzTldeA5a_xlwYudNRrtflIj-mEKagE-ikpZ4WGjIGYYxHdphEOPFxfzEZR-m-NNQVCllAD3Hse78A2NgonoaJp9KoKbs2d9cGb6eiiTSXPPO6EPQSkROcUOBRYRMzeKw=w651-h433"
+            width="651" /></a></div><br /><span>
+    <o:p></o:p>
+</span>
+<p></p>
+
+<p class="MsoNormal"><span>
+        <o:p>&nbsp;</o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+
+<p class="MsoNormal"><b><span>What is atomic operation and what are atomic classes in the
+            Java Concurrency API?</span></b></p>
+<p class="MsoNormal"><span>An atomic operation is an operation which is performed as a
+        single unit of work without the possibility of interference from other operations. The Java language
+        specification guarantees that reading or writing a variable is an atomic operation(unless the variable is of
+        type long or double ).&nbsp;Atomic operations in concurrent programming are program operations that run
+        completely independently of any other processes. Atomic operations are used in many modern operating systems and
+        parallel processing systems.&nbsp;Java provides atomic classes such as AtomicInteger, AtomicLong, AtomicBoolean
+        and AtomicReference.</span></p>
+
+<p class="MsoNormal"><br /></p>
+<p class="MsoNormal"><span>&nbsp;<b>What are Executor and ExecutorService and what are the
+            differences&nbsp;</b></span><span><b>between them?</b></span></p>
+<p class="MsoNormal"><span>The concurrent API in Java provides a feature known as an
+        executor that initiates and controls the execution of threads. As such, an executor offers an alternative to
+        managing threads using the thread class. At the core of an executor is the Executor interface. It refers to the
+        objects that execute submitted Runnable tasks.&nbsp;</span></p>
+<p class="MsoNormal"><span>The Java ExecutorService is the interface which allows us to
+        execute tasks on threads asynchronously. The Java ExecutorService interface is present in the
+        java.util.concurrent package. The ExecutorService helps in maintaining a pool of threads and assigns them tasks.
+        It also provides the facility to queue up tasks until there is a free thread available if the number of tasks is
+        more than the threads available.</span></p>
+<p class="MsoNormal"><span>The ExecutorService interface extends Executor by adding methods
+        that help manage and control the execution of threads.</span></p>
+<p class="MsoNormal"><br /></p>
+<p class="MsoNormal"><span></span></p>
+<p class="MsoNormal"><span><b>What are Concurrent Collection Classes?</b></span></p>
+<div>The concurrent collection APIs, apart from the Java Collection API, are a set of collections APIs that are designed
+    and optimized specifically for synchronized multithreaded access. They are grouped under the java.util.concurrent
+    package.&nbsp;</div>
+
+<p class="MsoNormal"><span>Java Honk, summarizes the classes as follows:</span></p>
+<p class="MsoNormal"><span><b>ConcurrentHashMap: </b>Whenever many threads is expected to
+        access given collection ConcurrentHashMap is normally preferable to a synchronized HashMap</span></p>
+<p class="MsoNormal"><span><b>ConcurrentSkipListMap:</b> It is normally preferable to a
+        synchronized TreeMap</span></p>
+<p class="MsoNormal"><span><b>ConcurrentSkipListSet:</b> It’s preferable when you need
+        sorted container that would be accessed by using multiple threads. These are essentially equivalents of TreeMap
+        and TreeSet for concurrent code.</span></p>
+<p class="MsoNormal"><span><b>CopyOnWriteArrayList</b>: It’s preferable over to
+        synchronized ArrayList where expected number of reads and traversals is greatly outnumbering the number of
+        updates to the list.</span></p>
+<p class="MsoNormal"><span></span></p>
+<p class="MsoNormal"><span><b>CopyOnWriteArraySet</b>: It is preferable and well suited for
+        applications where set sizes generally stay small and read-only operations vastly outnumber mutative
+        operations(add, set, remove, etc.), and you need to prevent interference among threads during traversal
+        operation.</span></p>
+<p class="MsoNormal"><span>
+        <o:p><br /></o:p>
+    </span></p>
+
+<p class="MsoNormal"><b><span>Resources<o:p></o:p></span></b></p>
+
+<p class="MsoNormal">- <span>Samarpit Tuli, 29 June 2018 - Java Thread Tutorial:
+        Creating Threads and Multithreading in Java -
+        https://dzone.com/articles/java-thread-tutorial-creating-threads-and-multithr
+        <o:p></o:p>
+    </span></p>
+
+<p class="MsoNormal">- <span><span>Jakob Jenkov -
+            Java Memory Model - http://tutorials.jenkov.com/java-concurrency/java-memory-model.html</span>
+        <o:p></o:p>
+    </span></p>
+
+<p class="MsoNormal">- <span>
+        <o:p>&nbsp;Java Honk, April 2014 -&nbsp;</o:p>https://javahonk.com/what-are-concurrent-collection-classes/
+    </span></p>
+
+<p class="MsoNormal">- <span>
+        <o:p>&nbsp;Vinish Kapoor, 22 May 2020 - Creating Daemon Thread in Java -&nbsp;</o:p>
+        https://dzone.com/articles/creating-daemon-thread-in-java
+    </span><span>
+    </span></p>
